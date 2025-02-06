@@ -1,4 +1,13 @@
 
+window.onload = function() {
+    const token = localStorage.getItem("authToken");
+
+    if (token) {
+        // Redirect alla pagina di login se il token è assente
+        window.location.href = "/dashboard.html";
+    } 
+};
+
 async function login(event) {
     event.preventDefault();
     const username = document.getElementById('username').value;

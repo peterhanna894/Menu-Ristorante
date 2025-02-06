@@ -11,7 +11,13 @@ window.onload = function() {
         loadArticles();
     }
 };
+const logoutBtn = document.getElementById('logout-btn');
+logoutBtn.addEventListener('click', function() {
+localStorage.removeItem('authToken');  
+token = '';
 
+window.location.href = `dashboardLogin.html`;
+});
 // Carica le categorie per il filtro
 function loadCategories() {
     fetch("http://localhost:8080/categorie", {
